@@ -11,7 +11,31 @@
 ## ⏳ 2. Тимчасові фільтри (Time Intelligence)
 > **Pre-frame:** Щоб зрозуміти майбутнє, треба чітко сегментувати минуле. Ці поля створюють логічні "контейнери" для порівняння періодів.
 
-### **Поточні періоди**
-* **CD (Current Date)**
+### **Current and Past Periods** 
+* **CD (Current Date)** - Reference point for metrics  
+  
   ```tableau
   [Select_Month]
+* **CM (Current Month)** - Extracted month from CD (Only for MoM related calculations)
+  
+  ```tableau
+  MONTH([CD])
+* **PM (Previous Month)** - Extracted previous month from CD (Only for MoM related calculations)
+  
+  ```tableau
+  MONTH(DATEADD('month',-1,[CD]))
+* **PMY (Previous Month Year)** - Extracted Year of previous month. If PM is January - Year 
+  
+  ```tableau
+  
+* **CY (Current Year)** - Extracted Current Year from CD
+  
+  ```tableau
+  YEAR([CD])
+* **PY (Previous Year)** - Extracted Previous Year from CD
+  
+  ```tableau
+  YEAR([CD])-1
+
+  
+
