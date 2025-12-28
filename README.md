@@ -24,10 +24,10 @@
   
   ```tableau
   MONTH(DATEADD('month',-1,[CD]))
-* **PMY (Previous Month Year)** - Extracted Year of previous month. If PM is January - Year 
+* **PMY (Previous Month Year)** - Extracted Year of Previous Month. If PM is January - year is shifts back
   
   ```tableau
-  
+   YE
 * **CY (Current Year)** - Extracted Current Year from CD
   
   ```tableau
@@ -36,6 +36,17 @@
   
   ```tableau
   YEAR([CD])-1
+
+### **Sales & Profit Metrics** 
+
+**The Profit Engines**
+* `CY_Profit` - CY YTD Product Profitability
+  ```tableau
+  [Select_Month]
+* `PY_Profit` - 
+  
+  
+
 
   
 
