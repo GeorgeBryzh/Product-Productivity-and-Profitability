@@ -40,10 +40,16 @@
 ### **Sales & Profit Metrics** 
 
 **The Profit Engines**
-* `CY_Profit` - CY YTD Product Profitability
+* `CY_Profit` - CY Product Profitability since JAN
   ```tableau
   [Select_Month]
-* `PY_Profit` - 
+* `PY_Profit` - PY Product Profitability until 31 Dec
+**The Sales Engines**
+* `CY_Sales` - CY Product Profitability since JAN
+  ```tableau
+* `PY_Sales` - CY Product Profitability since JAN
+  ```tableau
+  
   
   
 
