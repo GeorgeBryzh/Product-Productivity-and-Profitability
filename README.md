@@ -39,16 +39,28 @@
 
 ### **Sales & Profit Metrics** 
 
+> **Fixed**This methrics calculate Fixed Year-to-Date (YTD) Sales since JAN (even you selected other month).
+
+**The Sales Engines**
+* `CY_Sales` - calculates CY Sales for products or categories
+  ```tableau
+* `PY_Sales` - calculates PY Sales for products or categories
+  ```tableau
 **The Profit Engines**
-* `CY_Profit` - CY Product Profitability since JAN
+* `CY_Profit` - calculates CY Profitability for products or categories
   ```tableau
   [Select_Month]
-* `PY_Profit` - PY Product Profitability until 31 Dec
+* `PY_Profit` - calculates PY Profitability for products or categories
+  
+### **Growth & Momentum** 
+
+> Whether we are grow, or degrading? Methrics showes Month-over-Year (MoM) momentum and Year-over-Year (YoY) stability
+
 **The Sales Engines**
-* `CY_Sales` - CY Product Profitability since JAN
+* `CY_Sales` - 
   ```tableau
-* `PY_Sales` - CY Product Profitability since JAN
-  ```tableau
+
+
   
   
   
