@@ -54,10 +54,10 @@
   
 ### **Growth & Momentum** 
 
-> Whether we are grow, or degrading? Methrics showes Month-over-Year (MoM) momentum and Year-over-Year (YoY) stability
+> Whether we are grow, or degrading? Methrics showes Month-over-Year (MoM) growth momentum and Year-over-Year (YoY) growth performance
 
 **The Sales Engines**
-* `CY_Sales` - 
+* `YoY_Profit %` - Profit Trend in %. Showes long-term performance 
   ```tableau
 
 
