@@ -61,7 +61,7 @@
   ```tableau
 * `YoY_Sales %` -  Sales Performamce indicator
   ```tableau
-* 'YoY_Sales_Arrow %' or `YoY_Profit_Arrow %` - Visual Triggers. These are Immediate Signal on growth (Blue/Green) versus decline (Red) trends
+* `YoY_Sales_Arrow %` or `YoY_Profit_Arrow %` - Visual Triggers. These are Immediate Signal on growth (Blue/Green) versus decline (Red) trends
   ```tableau
 
 **Month over Month**
