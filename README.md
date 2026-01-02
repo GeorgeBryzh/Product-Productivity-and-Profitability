@@ -27,7 +27,7 @@
 * **PMY (Previous Month Year)** - Extracted Year of Previous Month. If PM is January - year is shifts back
   
   ```tableau
-   YE
+   YEAR((DATEADD('month',-1,[CD])))
 * **CY (Current Year)** - Extracted Current Year from CD
   
   ```tableau
@@ -44,23 +44,28 @@
 **The Sales Engines**
 * `CY_Sales` - calculates CY Sales for products or categories
   ```tableau
+  IF [YEAR] = [CY] THEN [Sales] END
 * `PY_Sales` - calculates PY Sales for products or categories
   ```tableau
+  ZN(IF [YEAR]=[PY] THEN [Sales] END)
 **The Profit Engines**
 * `CY_Profit` - calculates CY Profitability for products or categories
   ```tableau
-  [Select_Month]
+  IF [YEAR] = [CY] THEN [Profit] END
 * `PY_Profit` - calculates PY Profitability for products or categories
-  
+  ```tableau
+  IF [YEAR]=[PY] THEN [Profit] END
 ### **Growth & Momentum** 
 
 > Whether we are grow, or degrading? Methrics showes Month-over-Year (MoM) growth momentum and Year-over-Year (YoY) growth performance.
 
 **Year over Year**
-* `YoY_Profit %` - Profit Performance indicator
+* `YoY_Profit (%)` - Profit Performance indicator
   ```tableau
-* `YoY_Sales %` -  Sales Performamce indicator
+  (SUM([CY_Profit])-SUM([PY_Profit]))/SUM([PY_Profit])
+* `YoY_Sales (%)` -  Sales Performamce indicator
   ```tableau
+  (SUM([CY_Sales])-SUM([PY_Sales]))/SUM([PY_Sales])
 * `YoY_Sales_Arrow %` or `YoY_Profit_Arrow %` - Visual Triggers. These are Immediate Signal on growth (Blue/Green) versus decline (Red) trends
   ```tableau
 
