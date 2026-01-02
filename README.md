@@ -1,4 +1,4 @@
-> Гнучкість — це контроль. Параметри дозволяють користувачу миттєво змінювати перспективу аналізу, не перевантажуючи інтерфейс.
+> Flexibility - is a control. Parameters empower users to scale analysis details in real time.
 
 | Параметр | Функція (The Strategy) |
 | :--- | :--- |
@@ -8,8 +8,8 @@
 
 ---
 
-## ⏳ 2. Тимчасові фільтри (Time Intelligence)
-> **Pre-frame:** Щоб зрозуміти майбутнє, треба чітко сегментувати минуле. Ці поля створюють логічні "контейнери" для порівняння періодів.
+## ⏳ 2. Time Intelligence
+> **Pre-frame:** We performed granular historical segmentation. These fields is pre-configured Date pieces to calculate KPI's
 
 ### **Current and Past Periods** 
 * **CD (Current Date)** - Reference point for metrics  
@@ -39,20 +39,24 @@
 
 ### **Sales & Profit Metrics** 
 
-> **Fixed**This methrics calculate Fixed Year-to-Date (YTD) Sales since JAN (even you selected other month).
+> This methrics calculate Year-to-Date (YTD) Sales since JAN (even you selected other month).
 
 **The Sales Engines**
 * `CY_Sales` - calculates CY Sales for products or categories
+  
   ```tableau
   IF [YEAR] = [CY] THEN [Sales] END
 * `PY_Sales` - calculates PY Sales for products or categories
+  
   ```tableau
   ZN(IF [YEAR]=[PY] THEN [Sales] END)
 **The Profit Engines**
 * `CY_Profit` - calculates CY Profitability for products or categories
+  
   ```tableau
   IF [YEAR] = [CY] THEN [Profit] END
 * `PY_Profit` - calculates PY Profitability for products or categories
+  
   ```tableau
   IF [YEAR]=[PY] THEN [Profit] END
 ### **Growth & Momentum** 
@@ -61,19 +65,33 @@
 
 **Year over Year**
 * `YoY_Profit (%)` - Profit Performance indicator
+  
   ```tableau
   (SUM([CY_Profit])-SUM([PY_Profit]))/SUM([PY_Profit])
 * `YoY_Sales (%)` -  Sales Performamce indicator
+  
   ```tableau
   (SUM([CY_Sales])-SUM([PY_Sales]))/SUM([PY_Sales])
-* `YoY_Sales_Arrow %` or `YoY_Profit_Arrow %` - Visual Triggers. These are Immediate Signal on growth (Blue/Green) versus decline (Red) trends
-  ```tableau
-
+* `YoY_Sales_Arrow` or `YoY_Profit_Arrow` - Visual Triggers. These are Immediate Signal on growth (Blue/Green) versus decline (Red) trends
+  
+  * for Sales one
+    
+    ```tableau
+     IF [YoY_Sales (%) ] > 0 THEN '▲' ELSE '▼' END
+  * for Profit one
+    
+    ```tableau
+    IF [YoY_Profit (%) ] > 0 THEN '▲' ELSE '▼' END
 **Month over Month**
-* `MoM_Profit %` - Profit Variance indicates on short-term tactic  
+* `MoM_Profit (%)` - Profit Variance indicates on short-term tactic
+  
   ```tableau
-* `MoM_Sales %` - Sales Variance indicates on short-term tactic 
+   ZN((SUM([CM_Profit])-SUM([PM_Profit]))/SUM([PM_Profit]))
+* `MoM_Sales (%)` - Sales Variance indicates on short-term tactic
+
   ```tableau
+   (SUM([CM_Sales])-SUM([PM_Sales]))/SUM([PM_Sales])
+  ```
 
 
 
